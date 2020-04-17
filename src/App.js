@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import FormColorPicker from './forms/FormColorPicker'
+import Select from './forms/Select'
 import ListBasic from './lists/ListBasic'
 import PageHeader from './page-header/PageHeader'
 
@@ -49,7 +49,9 @@ class App extends React.Component {
         </header>
         <main className="App-main">
           <p>Change the color of the page:</p>
-          <FormColorPicker colors={this.state.themes} onPick={this.updatePageTheme} />
+          <form>
+            <Select options={this.state.themes} onSelect={this.updatePageTheme} />
+          </form>
 
           <p>Below is a list of items that doesn't do much right now. Later the bullets will respond to a theme change:</p>
           <ListBasic items={this.state.listBasicItems} />
