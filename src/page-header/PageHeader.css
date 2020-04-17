@@ -11,10 +11,10 @@
 }
 
 .PageHeader-button {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--colorSecondaryBG);
     border: var(--borderPrimary);
     border-radius: calc(var(--borderSizeBase) * 5);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--colorSecondaryFG);
     cursor: pointer;
     outline: 0;
     padding: var(--gutterBase);

@@ -2,11 +2,13 @@
   /* colors */
   --colorPrimaryBG: #f77f00;
   --colorPrimaryFG: #666666;
+  --colorSecondaryBG: #ffffff;
+  --colorSecondaryFG: #666666;
 
   /* borders */
   --borderSizeBase: 2px;
-  --borderPrimary: calc(var(--borderSizeBase) * 2) rgba(0, 0, 0, 0.1) solid;
-  --borderPrimaryFocus: calc(var(--borderSizeBase) * 2) rgba(255, 255, 255, 0.75) solid;
+  --borderPrimary: calc(var(--borderSizeBase) * 2) rgba(0, 0, 0, 0.5) solid;
+  --borderPrimaryFocus: calc(var(--borderSizeBase) * 2) var(--colorPrimaryBG) solid;
   
   /* font sizes */
   --fontSizeBase: 1rem;
@@ -27,10 +29,14 @@
 
 .App[data-theme='florida'] {
   --colorPrimaryBG: #003087;
+  --colorSecondaryBG: #FA4616;
+  --colorSecondaryFG: #ffffff;
 }
 
 .App[data-theme='georgia'] {
   --colorPrimaryBG: #BA0C2F;
+  --colorSecondaryBG: #000000;
+  --colorSecondaryFG: #ffffff;
 }
 
 .App[data-theme='bama'] {
