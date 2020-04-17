@@ -17,8 +17,8 @@ class PageHeader extends React.Component {
     render () {
         return (
             <div className="PageHeader">
-                <h1 data-testid='pageTitle'>{this.props.pageTitle ? this.props.pageTitle : this.state.pageTitleDefault}</h1>
-                <button onClick={this.toggleButton}>{this.state.buttonToggled ? 'clicked' : 'click me'}</button>
+                <h1 className="PageHeader-pageTitle" data-testid='pageTitle'>{this.props.pageTitle ? this.props.pageTitle : this.state.pageTitleDefault}</h1>
+                <button className="PageHeader-button" onClick={this.toggleButton}>{this.state.buttonToggled ? 'clicked' : 'click me'}</button>
             </div>
         )
     }

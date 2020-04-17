@@ -1,5 +1,12 @@
-body {
+/* light reset */
+* {
+  font-size: 1rem;
   margin: 0;
+  padding: 0;
+}
+
+/* saved from react-create-app */
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

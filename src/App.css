@@ -1,7 +1,28 @@
+:root {
+  /* colors */
+  --colorPrimaryBG: orange;
+  --colorPrimaryFG: #ffffff;
+
+  /* borders */
+  --borderSizeBase: 2px;
+  --borderPrimary: calc(var(--borderSizeBase) * 2) rgba(0, 0, 0, 0.1) solid;
+  --borderPrimaryFocus: calc(var(--borderSizeBase) * 2) rgba(255, 255, 255, 0.75) solid;
+  
+  /* font sizes */
+  --fontSizeBase: 1rem;
+  --fontSizeTitle1: calc(var(--fontSizeBase) * 2);
+
+  /* gutters */
+  --gutterBase: 1rem;
+  --gutterHalf: calc(var(--gutterBase) / 2);
+  --gutterDouble: calc(var(--gutterBase) * 2);
+}
+
 .App {
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
+  background: var(--colorPrimaryBG);
+  color: var(--colorPrimaryFG);
+  font-size: var(--fontSizeBase);
   min-height: 100vh;
-  padding: 2rem;
+  padding: var(--gutterDouble);
   flex: 1;
 }
