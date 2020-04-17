@@ -1,3 +1,5 @@
+![Travis CI status](https://api.travis-ci.com/rustytanton/react-hello-world.svg?branch=master "Travis CI status")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

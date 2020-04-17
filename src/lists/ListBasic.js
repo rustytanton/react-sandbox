@@ -4,6 +4,7 @@ import powerT from '../images/power-t.svg'
 
 class ListBasic extends React.Component {
     render () {
+        
         return (
             <ul className="ListBasic">
                 {this.props.items.map((item) =>

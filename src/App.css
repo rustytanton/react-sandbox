@@ -1,6 +1,6 @@
-:root {
+.App {
   /* colors */
-  --colorPrimaryBG: orange;
+  --colorPrimaryBG: #f77f00;
   --colorPrimaryFG: #666666;
 
   /* borders */
@@ -16,15 +16,25 @@
   --gutterBase: 1rem;
   --gutterHalf: calc(var(--gutterBase) / 2);
   --gutterDouble: calc(var(--gutterBase) * 2);
-}
 
-.App {
   background: var(--colorPrimaryBG);
   color: var(--colorPrimaryFG);
   font-size: var(--fontSizeBase);
   min-height: 100vh;
   padding: var(--gutterDouble);
   flex: 1;
+}
+
+.App[data-theme='florida'] {
+  --colorPrimaryBG: #003087;
+}
+
+.App[data-theme='georgia'] {
+  --colorPrimaryBG: #BA0C2F;
+}
+
+.App[data-theme='bama'] {
+  --colorPrimaryBG: #AF002A;
 }
 
 .App-main {
