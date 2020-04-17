@@ -1,0 +1,11 @@
+.ListBasic-item {
+    align-items: center;
+    display: flex;
+    margin-bottom: var(--gutterHalf);
+}
+
+.ListBasic-bullet {
+    height: 16px;
+    margin-right: var(--gutterHalf);
+    width: 16px;
+}

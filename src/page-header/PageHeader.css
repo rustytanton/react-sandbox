@@ -1,10 +1,11 @@
 .PageHeader {
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: var(--gutterHalf) var(--gutterHalf) rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--gutterBase);
     padding: 1rem;
 }
 
 .PageHeader-pageTitle {
+    color: rgba(255, 255, 255, 0.9);
     font-size: var(--fontSizeTitle1);
     margin-bottom: var(--gutterBase);
 }
@@ -13,7 +14,7 @@
     background: rgba(0, 0, 0, 0.1);
     border: var(--borderPrimary);
     border-radius: calc(var(--borderSizeBase) * 5);
-    color: var(--secondaryFG);
+    color: rgba(255, 255, 255, 0.9);
     cursor: pointer;
     outline: 0;
     padding: var(--gutterBase);

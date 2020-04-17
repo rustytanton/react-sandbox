@@ -1,7 +1,7 @@
 :root {
   /* colors */
   --colorPrimaryBG: orange;
-  --colorPrimaryFG: #ffffff;
+  --colorPrimaryFG: #666666;
 
   /* borders */
   --borderSizeBase: 2px;
@@ -25,4 +25,9 @@
   min-height: 100vh;
   padding: var(--gutterDouble);
   flex: 1;
+}
+
+.App-main {
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--gutterDouble);
 }
