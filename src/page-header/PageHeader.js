@@ -1,5 +1,5 @@
 import React from 'react';
-import './PageHeader.css';
+import styles from './PageHeader.module.css';
 
 class PageHeader extends React.Component {
     constructor (props) {
@@ -16,9 +16,9 @@ class PageHeader extends React.Component {
 
     render () {
         return (
-            <div className="PageHeader">
-                <h1 className="PageHeader-pageTitle" data-testid='pageTitle'>{this.props.pageTitle ? this.props.pageTitle : this.state.pageTitleDefault}</h1>
-                <button className="PageHeader-button" onClick={this.toggleButton}>{this.state.buttonToggled ? 'clicked' : 'click me'}</button>
+            <div className={styles.container}>
+                <h1 className={styles.title} data-testid='pageTitle'>{this.props.pageTitle ? this.props.pageTitle : this.state.pageTitleDefault}</h1>
+                <button className={styles.button} onClick={this.toggleButton}>{this.state.buttonToggled ? 'clicked' : 'click me'}</button>
             </div>
         )
     }

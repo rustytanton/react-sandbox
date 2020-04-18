@@ -1,5 +1,5 @@
 import React from 'react';
-import './Select.css';
+import styles from './Select.module.css';
 
 class Select extends React.Component {
     constructor (props) {
@@ -13,9 +13,9 @@ class Select extends React.Component {
 
     render () {
         return (
-            <select className="Select" onChange={this.handleSelect}>
+            <select className={styles.select} onChange={this.handleSelect}>
                 {this.props.options.map((option) =>
-                    <option value={option.value}>{option.label}</option>
+                    <option key={option.id} value={option.value}>{option.label}</option>
                 )}
             </select>
         )

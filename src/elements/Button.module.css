@@ -1,0 +1,13 @@
+.primary {
+    background: var(--colorSecondaryBG);
+    border: var(--borderPrimary);
+    border-radius: calc(var(--borderSizeBase) * 5);
+    color: var(--colorSecondaryFG);
+    cursor: pointer;
+    outline: 0;
+    padding: var(--gutterBase);
+}
+
+.primary:focus {
+    border: var(--borderPrimaryFocus);
+}

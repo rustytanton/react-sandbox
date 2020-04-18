@@ -1,4 +1,4 @@
-.App {
+.container {
   /* colors */
   --colorPrimaryBG: #f77f00;
   --colorPrimaryFG: #666666;
@@ -27,23 +27,23 @@
   flex: 1;
 }
 
-.App[data-theme='florida'] {
+.container[data-theme='florida'] {
   --colorPrimaryBG: #003087;
   --colorSecondaryBG: #FA4616;
   --colorSecondaryFG: #ffffff;
 }
 
-.App[data-theme='georgia'] {
+.container[data-theme='georgia'] {
   --colorPrimaryBG: #BA0C2F;
   --colorSecondaryBG: #000000;
   --colorSecondaryFG: #ffffff;
 }
 
-.App[data-theme='bama'] {
+.container[data-theme='bama'] {
   --colorPrimaryBG: #AF002A;
 }
 
-.App-main {
+.main {
   background: rgba(255, 255, 255, 0.9);
   padding: var(--gutterDouble);
 }
