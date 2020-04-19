@@ -2,10 +2,15 @@
 # $WEBHOST_USER
 # $WEBHOST_DOMAIN
 # $WEBHOST_ROOT
-# $WEBHOST_PUBLIC_KEY
 
-echo 'Backing up last deployed version of the site...'
-ssh $WEBHOST_USER@$WEBHOST_DOMAIN "rm -rf $WEBHOST_ROOT_BACKUP && cp -R $WEBHOST_ROOT $WEBHOST_ROOT.bak && rm -rf $WEBHOST_ROOT/!(cgi-bin)"
+# 1) Remove temp directory if it exists
+# 2) Make a new empty temp directory
+ssh $WEBHOST_USER@$WEBHOST_DOMAIN "rm -rf $WEBHOST_ROOT.tmp && mkdir $WEBHOST_ROOT.tmp"
 
-echo 'Deploying latest files...'
-# scp -rp $TRAVIS_BUILD_DIR/build/* $WEBHOST_USER@$WEBHOST_DOMAIN:$WEBHOST_ROOT/
+# Copy newest files to temp dir on server
+scp -rp ./build/* $WEBHOST_USER@$WEBHOST_DOMAIN:$WEBHOST_ROOT.tmp/
+
+# 1) Copy server-generated cgi-bin from prod to temp deploy folder
+# 2) Rename production folder to back-up
+# 3) Rename temp folder to production
+ssh $WEBHOST_USER@$WEBHOST_DOMAIN "cp -R $WEBHOST_ROOT/cgi-bin $WEBHOST_ROOT.tmp/ && mv $WEBHOST_ROOT $WEBHOST_ROOT.bak && mv $WEBHOST_ROOT.tmp $WEBHOST_ROOT"
