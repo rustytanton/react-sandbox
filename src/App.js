@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './App.module.css';
 import Intro from './intro/Intro'
-import Select from './elements/Select'
 import ListBasic from './lists/ListBasic'
 import PageHeader from './page-header/PageHeader'
 
@@ -16,36 +15,10 @@ class App extends React.Component {
         { id: 'item2', title: 'Item 2' },
         { id: 'item3', title: 'Item 3' }
       ],
-      theme: 'tennessee',
-      themes: [
-          {
-              id: 'opt1',
-              label: 'Tennessee - Orange/White',
-              value: 'tennessee'
-          },
-          {
-              id: 'opt2',
-              label: 'Florida - Blue/Orange',
-              value: 'florida'
-          },
-          {
-              id: 'opt3',
-              label: 'Georgia - Red/Black',
-              value: 'georgia'
-          },
-          {
-              id: 'opt4',
-              label: 'Alabama - Crimson/White',
-              value: 'bama'
-          }
-      ]
+      theme: 'tennessee'
     }
-    this.updatePageTheme = this.updatePageTheme.bind(this)
+    this.handleThemeChange = this.handleThemeChange.bind(this)
     this.toggleButton = this.toggleButton.bind(this)
-  }
-
-  updatePageTheme (newColor) {
-    this.setState({ theme: newColor })
   }
 
   toggleButton () {
@@ -54,21 +27,22 @@ class App extends React.Component {
     })))
   }
 
+  handleThemeChange (newTheme) {
+    this.setState({
+      theme: newTheme
+    })
+  }
+
   render () {
     return (
       <div className={styles.container} data-theme={this.state.theme}>
         <header className={styles.header}>
-          <PageHeader pageTitle={this.state.pageTitle} />
+          <PageHeader pageTitle={this.state.pageTitle} onSiteThemeChange={this.handleThemeChange} />
         </header>
         <main className={styles.main}>
           <Intro />
 
-          <p>Change the page theme:</p>
-          <form action="#">
-            <Select options={this.state.themes} onSelect={this.updatePageTheme} />
-          </form>
-
-          <p>Below is a list of items that doesn't do much right now.</p>
+          <p>A list of items which responds to site theme changes:</p>
           <ListBasic items={this.state.listBasicItems} />
 
           <p>Click a button:</p>
