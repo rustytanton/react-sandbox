@@ -57,7 +57,7 @@ class App extends React.Component {
             <Select options={this.state.themes} onSelect={this.updatePageTheme} />
           </form>
 
-          <p>Below is a list of items that doesn't do much right now. Later the bullets will respond to a theme change:</p>
+          <p>Below is a list of items that doesn't do much right now.</p>
           <ListBasic items={this.state.listBasicItems} />
         </main>
       </div>
