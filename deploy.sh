@@ -10,7 +10,8 @@ ssh $WEBHOST_USER@$WEBHOST_DOMAIN "rm -rf $WEBHOST_ROOT.tmp && mkdir $WEBHOST_RO
 # Copy newest files to temp dir on server
 scp -rp ./build/* $WEBHOST_USER@$WEBHOST_DOMAIN:$WEBHOST_ROOT.tmp/
 
-# 1) Copy server-generated cgi-bin from prod to temp deploy folder
-# 2) Rename production folder to back-up
-# 3) Rename temp folder to production
-ssh $WEBHOST_USER@$WEBHOST_DOMAIN "cp -R $WEBHOST_ROOT/cgi-bin $WEBHOST_ROOT.tmp/ && mv $WEBHOST_ROOT $WEBHOST_ROOT.bak && mv $WEBHOST_ROOT.tmp $WEBHOST_ROOT"
+# 1) Remove previous build back-up folder
+# 2) Copy server-generated cgi-bin from prod to temp deploy folder
+# 3) Rename production folder to back-up
+# 4) Rename temp folder to production
+ssh $WEBHOST_USER@$WEBHOST_DOMAIN "rm -rf $WEBHOST_ROOT.bak && cp -R $WEBHOST_ROOT/cgi-bin $WEBHOST_ROOT.tmp/ && mv $WEBHOST_ROOT $WEBHOST_ROOT.bak && mv $WEBHOST_ROOT.tmp $WEBHOST_ROOT"
