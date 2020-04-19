@@ -52,7 +52,7 @@ class App extends React.Component {
           <PageHeader pageTitle={this.state.pageTitle} />
         </header>
         <main className={styles.main}>
-          <p>Change the color of the page:</p>
+          <p>Change the page theme:</p>
           <form action="#">
             <Select options={this.state.themes} onSelect={this.updatePageTheme} />
           </form>
