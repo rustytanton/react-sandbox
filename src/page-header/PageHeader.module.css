@@ -9,7 +9,3 @@
     font-size: var(--fontSizeTitle1);
     margin-bottom: var(--gutterBase);
 }
-
-.button {
-    composes: primary from '../elements/Button.module.css';
-}

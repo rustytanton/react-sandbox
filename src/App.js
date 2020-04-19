@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './App.module.css';
+import Intro from './intro/Intro'
 import Select from './elements/Select'
 import ListBasic from './lists/ListBasic'
 import PageHeader from './page-header/PageHeader'
@@ -8,7 +9,8 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      pageTitle: 'Rusty\'s hello world app',
+      buttonToggled: false,
+      pageTitle: 'Rusty\'s hello world React app',
       listBasicItems: [
         { id: 'item1', title: 'Item 1' },
         { id: 'item2', title: 'Item 2' },
@@ -39,10 +41,17 @@ class App extends React.Component {
       ]
     }
     this.updatePageTheme = this.updatePageTheme.bind(this)
+    this.toggleButton = this.toggleButton.bind(this)
   }
 
   updatePageTheme (newColor) {
     this.setState({ theme: newColor })
+  }
+
+  toggleButton () {
+    this.setState((state => ({
+        buttonToggled: !state.buttonToggled
+    })))
   }
 
   render () {
@@ -52,6 +61,8 @@ class App extends React.Component {
           <PageHeader pageTitle={this.state.pageTitle} />
         </header>
         <main className={styles.main}>
+          <Intro />
+
           <p>Change the page theme:</p>
           <form action="#">
             <Select options={this.state.themes} onSelect={this.updatePageTheme} />
@@ -59,6 +70,9 @@ class App extends React.Component {
 
           <p>Below is a list of items that doesn't do much right now.</p>
           <ListBasic items={this.state.listBasicItems} />
+
+          <p>Click a button:</p>
+          <button className={styles.button} onClick={this.toggleButton}>{this.state.buttonToggled ? 'clicked' : 'click me'}</button>
         </main>
       </div>
     )
