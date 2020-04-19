@@ -1,15 +1,12 @@
 import React from 'react';
-import './ListBasic.css';
-import powerT from '../images/power-t.svg'
+import styles from './ListBasic.module.css';
 
 class ListBasic extends React.Component {
     render () {
-        
         return (
-            <ul className="ListBasic">
+            <ul className={styles.list}>
                 {this.props.items.map((item) =>
-                    <li className="ListBasic-item" key={item.id}>
-                    <img alt='' className="ListBasic-bullet" src={powerT} />
+                    <li className={styles.item} key={item.id}>
                     {item.title}
                     </li>
                 )}
