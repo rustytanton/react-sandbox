@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       buttonToggled: false,
-      pageTitle: 'Rusty\'s hello world React app',
+      pageTitle: 'Rusty\'s React Sandbox',
       listBasicItems: [
         { id: 'item1', title: 'Item 1' },
         { id: 'item2', title: 'Item 2' },
