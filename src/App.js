@@ -15,7 +15,29 @@ class App extends React.Component {
         { id: 'item2', title: 'Item 2' },
         { id: 'item3', title: 'Item 3' }
       ],
-      theme: 'tennessee'
+      theme: 'tennessee',
+      themes: [
+          {
+              id: 'opt1',
+              label: 'Tennessee - Orange/White',
+              value: 'tennessee'
+          },
+          {
+              id: 'opt2',
+              label: 'Florida - Blue/Orange',
+              value: 'florida'
+          },
+          {
+              id: 'opt3',
+              label: 'Georgia - Red/Black',
+              value: 'georgia'
+          },
+          {
+              id: 'opt4',
+              label: 'Alabama - Crimson/White',
+              value: 'bama'
+          }
+      ]
     }
     this.handleThemeChange = this.handleThemeChange.bind(this)
     this.toggleButton = this.toggleButton.bind(this)
@@ -37,7 +59,7 @@ class App extends React.Component {
     return (
       <div className={styles.container} data-theme={this.state.theme}>
         <header className={styles.header}>
-          <PageHeader pageTitle={this.state.pageTitle} onSiteThemeChange={this.handleThemeChange} />
+          <PageHeader pageTitle={this.state.pageTitle} themes={this.state.themes} onSiteThemeChange={this.handleThemeChange} />
         </header>
         <main className={styles.main}>
           <Intro />
