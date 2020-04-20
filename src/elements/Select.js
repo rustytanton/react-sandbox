@@ -1,3 +1,8 @@
+/**
+ * I would probably just import
+ * https://react-select.com/home
+ * on a production site since it's almost identical to what I did here but has more features
+ */
 import React from 'react';
 import styles from './Select.module.css';
 
@@ -13,7 +18,7 @@ class Select extends React.Component {
 
     render () {
         return (
-            <select className={styles.select} onChange={this.handleSelect}>
+            <select data-testid='Select' className={styles.select} onChange={this.handleSelect}>
                 {this.props.options.map((option) =>
                     <option key={option.id} value={option.value}>{option.label}</option>
                 )}
