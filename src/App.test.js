@@ -8,12 +8,3 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
 });
-
-test('should toggle button text on click', () => {
-  const { getByRole } = render(<App />);
-  expect(getByRole('button')).toHaveTextContent('click me')
-  fireEvent.click(getByRole('button'))
-  expect(getByRole('button')).toHaveTextContent('clicked')
-  fireEvent.click(getByRole('button'))
-  expect(getByRole('button')).toHaveTextContent('click me')
-})

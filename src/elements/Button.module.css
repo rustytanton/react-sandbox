@@ -11,3 +11,12 @@
 .primary:focus {
     border: var(--borderPrimaryFocus);
 }
+
+.link {
+    background: 0;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    outline: 0;
+    text-decoration: underline;
+}

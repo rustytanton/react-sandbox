@@ -23,3 +23,15 @@
     margin-left: var(--gutterDouble);
     padding-left: var(--gutterBase);
 }
+
+.more {
+    display: none;
+}
+
+.container[data-show-more='true'] .more {
+    display: block;
+}
+
+.button {
+    composes: link from '../elements/Button.module.css';
+}
