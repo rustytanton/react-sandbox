@@ -5,9 +5,9 @@ class ListBasic extends React.Component {
     render () {
         return (
             <ul className={styles.list}>
-                {this.props.items.map((item) =>
-                    <li className={styles.item} key={item.id}>
-                    {item.title}
+                {this.props.items.map((item, index) =>
+                    <li className={styles.item} key={index.toString()}>
+                    {item}
                     </li>
                 )}
             </ul>

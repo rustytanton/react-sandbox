@@ -11,9 +11,9 @@ class App extends React.Component {
       buttonToggled: false,
       pageTitle: 'Rusty\'s React Sandbox',
       listBasicItems: [
-        { id: 'item1', title: 'Item 1' },
-        { id: 'item2', title: 'Item 2' },
-        { id: 'item3', title: 'Item 3' }
+        (<a href="http://www.google.com">Google</a>),
+        (<a href="http://www.facebook.com">Facebook</a>),
+        (<a href="http://www.twitter.com">Twitter</a>),
       ],
       theme: 'tennessee',
       themes: [
