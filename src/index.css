@@ -1,9 +1,15 @@
-/* light reset */
-* {
-  font-size: 1rem;
-  list-style-type: none;
+/* use built-in normalize.css reset */
+@import-normalize;
+
+/* border-box reset */
+body {
+  box-sizing: border-box;
   margin: 0;
-  padding: 0;
+}
+body *,
+body *:before,
+body *:after {
+  box-sizing: inherit;
 }
 
 /* saved from react-create-app */
