@@ -24,12 +24,12 @@ const setup = () => {
 
 test('should render pageTitle prop when passed', () => {
     const { options, onSelectSpy, testTitle } = setup()
-    const { getByTestId } = render(<PageHeader pageTitle={testTitle} themes={options} onSiteThemeChange={onSelectSpy} />);
+    const { getByTestId } = render(<PageHeader pageTitle={testTitle} themes={options} onThemeChange={onSelectSpy} />);
     expect(getByTestId('pageTitle')).toHaveTextContent(testTitle)
 })
 
 test('should render pageTitle default text when pageTitle prop not passed', () => {
     const { options, onSelectSpy } = setup()
-    const { getByTestId } = render(<PageHeader themes={options} onSiteThemeChange={onSelectSpy}  />);
+    const { getByTestId } = render(<PageHeader themes={options} onThemeChange={onSelectSpy}  />);
     expect(getByTestId('pageTitle')).toHaveTextContent('pageTitle default text')
 })

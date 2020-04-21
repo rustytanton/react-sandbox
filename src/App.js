@@ -1,20 +1,14 @@
 import React from 'react';
 import styles from './App.module.css';
-import Intro from './intro/Intro'
-import ListBasic from './lists/ListBasic'
-import PageHeader from './page-header/PageHeader'
+import PageHeader from './components/page-header/PageHeader';
+import Home from './pages/Home';
 
 class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      buttonToggled: false,
+      route: '/',
       pageTitle: 'Rusty\'s React Sandbox',
-      listBasicItems: [
-        (<a href="http://www.google.com">Google</a>),
-        (<a href="http://www.facebook.com">Facebook</a>),
-        (<a href="http://www.twitter.com">Twitter</a>),
-      ],
       theme: 'tennessee',
       themes: [
           {
@@ -40,13 +34,6 @@ class App extends React.Component {
       ]
     }
     this.handleThemeChange = this.handleThemeChange.bind(this)
-    this.toggleButton = this.toggleButton.bind(this)
-  }
-
-  toggleButton () {
-    this.setState((state => ({
-        buttonToggled: !state.buttonToggled
-    })))
   }
 
   handleThemeChange (newTheme) {
@@ -59,16 +46,16 @@ class App extends React.Component {
     return (
       <div className={styles.container} data-theme={this.state.theme}>
         <header className={styles.header}>
-          <PageHeader pageTitle={this.state.pageTitle} themes={this.state.themes} onSiteThemeChange={this.handleThemeChange} />
+          <PageHeader
+            pageTitle={this.state.pageTitle}
+            themes={this.state.themes}
+            onThemeChange={this.handleThemeChange}
+          />
         </header>
         <main className={styles.main}>
-          <Intro />
-
-          <p>A list of items which responds to site theme changes:</p>
-          <ListBasic items={this.state.listBasicItems} />
-
-          <p>Click a button:</p>
-          <button className={styles.button} onClick={this.toggleButton}>{this.state.buttonToggled ? 'clicked' : 'click me'}</button>
+          {this.state.route === '/' &&
+            <Home />
+          }
         </main>
       </div>
     )

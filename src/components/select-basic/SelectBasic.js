@@ -4,9 +4,9 @@
  * on a production site since it's almost identical to what I did here but has more features
  */
 import React from 'react';
-import styles from './Select.module.css';
+import styles from './SelectBasic.module.css';
 
-class Select extends React.Component {
+class SelectBasic extends React.Component {
     constructor (props) {
         super(props)
         this.handleSelect = this.handleSelect.bind(this)
@@ -27,4 +27,4 @@ class Select extends React.Component {
     }
 }
 
-export default Select
+export default SelectBasic
