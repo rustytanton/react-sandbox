@@ -15,6 +15,7 @@ class GridCol extends React.Component {
         this.resizeEvent = window.addEventListener('resize', () => {
             self.updateStateOnResize();
         })
+        self.updateStateOnResize();
     }
   
     /* @todo figure out a clean way to handle media queries with css modules + react */
