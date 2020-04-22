@@ -1,0 +1,12 @@
+.container {
+    margin-bottom: var(--marginBase);
+    padding-right: calc(var(--paddingBase) * 2);
+}
+
+.button {
+    background: none;
+    border: 0;
+    color: var(--colorPrimary);
+    font-weight: bold;
+    padding: 0;
+}

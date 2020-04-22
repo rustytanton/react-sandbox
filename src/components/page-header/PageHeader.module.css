@@ -1,0 +1,34 @@
+.container {
+    background: rgb(0, 0, 0, 0.1);
+    border-top: var(--colorPrimary) calc(var(--borderBase) * 4) solid;
+    border-bottom: var(--colorPrimary) calc(var(--borderBase) * 4) solid;
+    color: var(--colorSecondary);
+    padding: var(--paddingBase) calc(var(--paddingBase) * 2);
+}
+
+.container a {
+    color: var(--colorBodyLight);
+}
+
+.text {
+    padding: 0 var(--paddingBase) var(--paddingBase) 0;
+}
+
+.themePicker {
+    background: rgb(0, 0, 0, 0.1);
+    font-size: 80%;
+    padding: var(--paddingBase);
+}
+
+.button {
+    background: var(--colorPrimary);
+    border: var(--colorSecondary) var(--borderBase) solid;
+    border-radius: calc(var(--borderBase) * 2);
+    color: var(--colorSecondary);
+    cursor: pointer;
+    display: block;
+    font-size: var(--font-sizeBase);
+    margin-bottom: calc(var(--marginBase) / 2);
+    padding: calc(var(--paddingBase) / 2);
+    white-space: nowrap;
+}

@@ -1,3 +1,5 @@
 .container {
-
+    background: rgba(255, 255, 255, 0.9);
+    margin: calc(var(--marginBase) * 2);
+    padding: calc(var(--paddingBase) * 2);
 }

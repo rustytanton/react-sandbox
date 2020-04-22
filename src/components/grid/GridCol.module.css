@@ -1,3 +1,24 @@
 .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+}
+
+.container[data-halign='right'] {
+    align-items: flex-end;
+}
+
+.container[data-halign='center'] {
+    align-items: center;
+}
+
+.container[data-valign='bottom'] {
+    justify-content: flex-end;
+}
+
+.container[data-valign='center'] {
+    justify-content: center;
+}
+
+.container[data-stretch='true'] {
+    flex: 1;
 }

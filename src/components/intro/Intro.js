@@ -23,7 +23,7 @@ class Intro extends React.Component {
             <div className={styles.container} data-show-more={this.state.showMore}>
                 <p>Hi! If you got here it was probably from <a href="http://rustytanton.com">my website</a> or browsing my <a href="https://github.com/rustytanton">Github profile</a>. This site is a sandbox where I am going to post random React modules I build as I learn React.</p>
                 {!this.state.showMore && 
-                    <button className={styles.button} onClick={this.toggleShowMore}>Show more</button>
+                    <button className={styles.button} onClick={this.toggleShowMore}>Show more &gt;</button>
                 }
                 {this.state.showMore && 
                     <>
@@ -34,7 +34,7 @@ class Intro extends React.Component {
                         <li><a href="https://travis-ci.com/github/rustytanton/react-sandbox">The build</a> (with unit tests) has to pass before updates are deployed here</li>
                         <li>Uses <a href="https://github.com/css-modules/css-modules">CSS Modules</a></li>
                     </ul>
-                    <button className={styles.button} onClick={this.toggleShowMore}>Show less</button>
+                    <button className={styles.button} onClick={this.toggleShowMore}>&lt; Show less</button>
                     </>
                 }
             </div>

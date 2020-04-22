@@ -4,7 +4,7 @@ import styles from './PageMain.module.css';
 class PageMain extends React.Component {
     render () {
         return (
-            <main class={styles.container}>
+            <main className={styles.container}>
                 {this.props.children}
             </main>
         )
