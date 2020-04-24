@@ -33,7 +33,7 @@ class PageHeader extends React.Component {
                                 <div className={styles.themePicker}>
                                     <p>Current theme: <span className={styles.themeName}>{context.themeTitle}</span></p>
                                     <p>Set theme to:</p>
-                                    {context.themes.map((theme, index) =>
+                                    {context.themes.forEach((theme, index) =>
                                         <>
                                             {context.theme !== theme.id &&
                                                 <button className={styles.button} style={theme.properties} onClick={() => { context.themeSet(theme.id) }}>{theme.title}</button>

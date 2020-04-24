@@ -8,7 +8,6 @@ import styles from './App.module.css';
 class App extends React.Component {
   render () {
     let renderRoute = (route) => {
-      console.log('route', route)
       switch(route) {
         case '/page2':
           return <Page2 />;

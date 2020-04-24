@@ -12,6 +12,7 @@ before_install:
 - echo -e "Host $WEBHOST_DOMAIN\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
 - ssh -i ./deploy_key $WEBHOST_USER@$WEBHOST_DOMAIN pwd
+- ./contentful-tokens.sh
 script:
 - npm test
 - npm run build
