@@ -17,25 +17,12 @@ class Home extends React.Component {
                         <GridCol width='50%' halign='center'>
                             <Intro />
                         </GridCol>
-                        <GridCol width='50%' halign='center'>
-                            <Grid>
-                                <GridCol width='50%'>
-                                    <p>Another basic list:</p>
-                                    <ListBasic items={[
-                                        (<a href="http://www.google.com">Google</a>),
-                                        (<a href="http://www.facebook.com">Facebook</a>),
-                                        (<a href="http://www.twitter.com">Twitter</a>)
-                                    ]} />
-                                </GridCol>
-                                <GridCol stretch={true} width='50%'>
-                                    <p>Another basic list:</p>
-                                    <ListBasic items={[
-                                        (<a href="http://www.google.com">Google</a>),
-                                        (<a href="http://www.facebook.com">Facebook</a>),
-                                        (<a href="http://www.twitter.com">Twitter</a>)
-                                    ]} />
-                                </GridCol>
-                            </Grid>
+                        <GridCol width='50%'>
+                            <p>Site Navigation:</p>
+                            <ListBasic items={[
+                                (<a href="/page2">Page 2</a>),
+                                (<a href="/Page3.html">Page 3</a>)
+                            ]} />
                         </GridCol>
                     </Grid>
                 </PageMain>

@@ -4,6 +4,24 @@ import Themes from '../themes/Themes';
 import ThemeTennessee from '../themes/ThemeTennessee';
 
 class SiteInfoProvider extends React.Component {
+    componentDidMount () {
+        let self = this
+        this.routeListener = window.addEventListener('popstate', () => {
+            self.setRoute();
+        })
+        self.setRoute();
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener('popstate', this.routeListener)
+    }
+
+    setRoute () {
+        this.setState({
+            route: window.location.pathname
+        });
+    }
+
     constructor (props) {
         super(props)
         this.state = {
@@ -11,7 +29,7 @@ class SiteInfoProvider extends React.Component {
             siteDescription: 'A sandbox where I am going to post random React modules I build as I learn React.',
             theme: ThemeTennessee.id,
             themes: Themes
-        }
+        };
     }
 
     render () {
@@ -28,6 +46,7 @@ class SiteInfoProvider extends React.Component {
         return (
             <SiteInfoContext.Provider
                 value={{
+                    route: this.state.route,
                     siteTitle: this.state.siteTitle,
                     siteDescription: this.state.siteDescription,
                     theme: this.state.theme,

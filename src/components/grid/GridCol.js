@@ -20,7 +20,7 @@ class GridCol extends React.Component {
   
     /* @todo figure out a clean way to handle media queries with css modules + react */
     componentWillUnmount() {
-        window.removeEventListener(this.resizeEvent);
+        window.removeEventListener('resize', this.resizeEvent);
     }
 
     /* @todo figure out a clean way to handle media queries with css modules + react */
