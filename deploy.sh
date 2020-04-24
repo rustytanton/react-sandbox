@@ -8,7 +8,8 @@
 ssh $WEBHOST_USER@$WEBHOST_DOMAIN "rm -rf $WEBHOST_ROOT.tmp && mkdir $WEBHOST_ROOT.tmp"
 
 # Copy newest files to temp dir on server
-scp -rp ./build/(*|.*) $WEBHOST_USER@$WEBHOST_DOMAIN:$WEBHOST_ROOT.tmp/
+# scp -rp ./build/(*|.*) $WEBHOST_USER@$WEBHOST_DOMAIN:$WEBHOST_ROOT.tmp/
+rsync -av -s 'ssh -i /deploy_key' $WEBHOST_USER@$WEBHOST_DOMAIN:$WEBHOST_ROOT ./build/
 
 # 1) Remove previous build back-up folder
 # 2) Copy server-generated cgi-bin from prod to temp deploy folder
