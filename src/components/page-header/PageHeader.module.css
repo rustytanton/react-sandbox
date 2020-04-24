@@ -3,7 +3,7 @@
     border-top: var(--colorPrimary) calc(var(--borderBase) * 4) solid;
     border-bottom: var(--colorPrimary) calc(var(--borderBase) * 4) solid;
     color: var(--colorSecondary);
-    padding: var(--paddingBase) calc(var(--paddingBase) * 2);
+    padding: var(--paddingBase) calc(var(--paddingBase) * 2) 0 calc(var(--paddingBase) * 2);
 }
 
 .container a {
@@ -17,6 +17,7 @@
 .themePicker {
     background: rgb(0, 0, 0, 0.1);
     font-size: 80%;
+    margin-bottom: var(--marginBase);
     padding: var(--paddingBase);
 }
 
@@ -31,4 +32,21 @@
     margin-bottom: calc(var(--marginBase) / 2);
     padding: calc(var(--paddingBase) / 2);
     white-space: nowrap;
+}
+
+.navList {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    background: rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    margin-right: calc(var(--marginBase) / 4);
+    padding: var(--paddingBase);
+}
+
+.navItem span {
+    color: rgba(255, 255, 255, 0.6)
 }

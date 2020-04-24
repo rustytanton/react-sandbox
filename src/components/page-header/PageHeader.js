@@ -6,6 +6,18 @@ import GridCol from '../grid/GridCol';
 
 class PageHeader extends React.Component {
     render () {
+        let navLink = function (route, currentRoute, title) {
+            if (currentRoute && route !== currentRoute) {
+                return (
+                    <a href={route}>{title}</a>
+                )
+            } else {
+                return (
+                    <span>{title}</span>
+                )
+            }
+        }
+
         return (
             <SiteInfoContext.Consumer>
                 {context => (
@@ -29,6 +41,21 @@ class PageHeader extends React.Component {
                                         </>
                                     )}
                                 </div>
+                            </GridCol>
+                            <GridCol width='100%'>
+                                <ul className={styles.navList}>
+                                    <li className={styles.navItem}>
+                                        {navLink('/', context.route, 'Home')}
+                                    </li>
+                                    <li className={styles.navItem}>
+                                        {navLink('/page2', context.route, 'Page 2')}
+                                    </li>
+                                    <li className={styles.navItem}>
+                                        <a href="/Page3.html">
+                                            Page 3
+                                        </a>
+                                    </li>
+                                </ul>
                             </GridCol>
                         </Grid>
                     </div>
