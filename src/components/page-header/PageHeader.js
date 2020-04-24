@@ -33,13 +33,13 @@ class PageHeader extends React.Component {
                                 <div className={styles.themePicker}>
                                     <p>Current theme: <span className={styles.themeName}>{context.themeTitle}</span></p>
                                     <p>Set theme to:</p>
-                                    {context.themes.forEach((theme, index) =>
-                                        <>
-                                            {context.theme !== theme.id &&
-                                                <button className={styles.button} style={theme.properties} onClick={() => { context.themeSet(theme.id) }}>{theme.title}</button>
-                                            }
-                                        </>
-                                    )}
+                                    {context.themes.map((theme, index) => {
+                                        if (context.theme !== theme.id) {
+                                            return (<button key={index.toString()} className={styles.button} style={theme.properties} onClick={() => { context.themeSet(theme.id) }}>{theme.title}</button>)
+                                        } else {
+                                            return ''
+                                        }
+                                    })}
                                 </div>
                             </GridCol>
                             <GridCol width='100%'>
