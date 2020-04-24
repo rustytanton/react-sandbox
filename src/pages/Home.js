@@ -14,10 +14,10 @@ class Home extends React.Component {
                 <PageHeader />
                 <PageMain>
                     <Grid>
-                        <GridCol width='50%' halign='center'>
+                        <GridCol width='70%' halign='center'>
                             <Intro />
                         </GridCol>
-                        <GridCol width='50%'>
+                        <GridCol width='30%'>
                             <p>Site Navigation:</p>
                             <ListBasic items={[
                                 (<a href="/page2">Page 2</a>),
