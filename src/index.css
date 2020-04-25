@@ -1,12 +1,23 @@
 /* use built-in normalize.css reset */
 @import-normalize;
 
+/* global css variables */
+:root {
+  --colorBody: #666666;
+  --colorBodyDark: #666666;
+  --colorBodyLight: #ffffff;
+  --borderBase: 0.125rem;
+  --fontSizeBase: 1rem;
+  --marginBase: 1rem;
+  --paddingBase: 1rem;
+}
+
 /* other resets / minimal styles inherited through the app */
 body {
   box-sizing: border-box;
   color: var(--colorBody);
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: var(--fontSizeBase);
   margin: 0;
 }
 body *,

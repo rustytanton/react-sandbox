@@ -28,7 +28,7 @@
     color: var(--colorSecondary);
     cursor: pointer;
     display: block;
-    font-size: var(--font-sizeBase);
+    font-size: 90%;
     margin-bottom: calc(var(--marginBase) / 2);
     padding: calc(var(--paddingBase) / 2);
     white-space: nowrap;

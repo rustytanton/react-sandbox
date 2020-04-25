@@ -31,11 +31,11 @@ class PageHeader extends React.Component {
                             </GridCol>
                             <GridCol>
                                 <div className={styles.themePicker}>
-                                    <p>Current theme: <span className={styles.themeName}>{context.themeTitle}</span></p>
+                                    <p>Current theme: <span className={styles.themeName}>{context.theme.title}</span></p>
                                     <p>Set theme to:</p>
                                     {context.themes.map((theme, index) => {
-                                        if (context.theme !== theme.id) {
-                                            return (<button key={index.toString()} className={styles.button} style={theme.properties} onClick={() => { context.themeSet(theme.id) }}>{theme.title}</button>)
+                                        if (context.theme.title !== theme.title) {
+                                            return (<button style={theme.cssProperties} key={index.toString()} className={styles.button} onClick={() => { context.themeSet(theme.title) }}>{theme.title}</button>)
                                         } else {
                                             return ''
                                         }
@@ -46,14 +46,6 @@ class PageHeader extends React.Component {
                                 <ul className={styles.navList}>
                                     <li className={styles.navItem}>
                                         {navLink('/', context.route, 'Home')}
-                                    </li>
-                                    <li className={styles.navItem}>
-                                        {navLink('/page2', context.route, 'Page 2')}
-                                    </li>
-                                    <li className={styles.navItem}>
-                                        <a href="/Page3.html">
-                                            Page 3
-                                        </a>
                                     </li>
                                 </ul>
                             </GridCol>
