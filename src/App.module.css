@@ -1,4 +1,5 @@
 .container {
     background-color: var(--colorPrimary);
     min-height: 100vh;
+    padding-bottom: calc(var(--paddingBase) * 2);
 }
