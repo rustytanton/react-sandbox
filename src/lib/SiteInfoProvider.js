@@ -14,13 +14,6 @@ class SiteInfoProvider extends React.Component {
     }
 
     componentDidMount () {
-        /*
-        const self = this
-        this.routeListener = window.addEventListener('popstate', () => {
-            self.setRoute();
-        })
-        self.setRoute();
-        */
         this.doQuery()
     }
 
@@ -49,6 +42,7 @@ class SiteInfoProvider extends React.Component {
                         })
                     }
                     self.setState({
+                        siteNavigation: fields.siteNavigation,
                         siteTitle: fields.siteTitle,
                         siteDescription: fields.siteDescription,
                         themes: themes,
@@ -60,12 +54,6 @@ class SiteInfoProvider extends React.Component {
 
     componentWillUnmount () {
         window.removeEventListener('popstate', this.routeListener)
-    }
-
-    setRoute () {
-        this.setState({
-            route: window.location.pathname
-        });
     }
 
     themeSetCssProperties (theme) {
@@ -103,7 +91,7 @@ class SiteInfoProvider extends React.Component {
         return (
             <SiteInfoContext.Provider
                 value={{
-                    route: this.state.route,
+                    siteNavigation: this.state.siteNavigation,
                     siteTitle: this.state.siteTitle,
                     siteDescription: this.state.siteDescription,
                     theme: this.state.theme,

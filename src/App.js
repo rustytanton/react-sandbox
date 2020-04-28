@@ -8,8 +8,7 @@ import styles from './App.module.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 class App extends React.Component {
@@ -20,9 +19,7 @@ class App extends React.Component {
           {context => (
             <div className={styles.container} style={context.theme.cssProperties}>
               <Router>
-                <PageHeader navLinks={[
-                  <Link to="/">Home</Link>
-                ]} />
+                <PageHeader />
                 <Switch>
                   <Route path="/blog/:postId" component={BlogPostPage} />
                   <Route path="/">

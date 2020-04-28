@@ -32,11 +32,22 @@ class PageHeader extends React.Component {
                                 </div>
                             </GridCol>
                             <GridCol width='100%'>
-                                <ul className={styles.navList}>
-                                    {this.props.navLinks.map((navLink, index) => {
-                                        return (<li key={index.toString()} className={styles.navItem}>{navLink}</li>)
-                                    })}
-                                </ul>
+                                {context.siteNavigation &&
+                                    <ul className={styles.navList}>
+                                        {context.siteNavigation.map((item, index) => {
+                                            return (
+                                                <li className={styles.navItem} key={index.toString()}>
+                                                    {item.fields.isHomepage &&
+                                                        <a href="/">{item.fields.title}</a>
+                                                    }
+                                                    {(item.sys.contentType.sys.id === 'blogPost') &&
+                                                        <a href={`/blog/${item.sys.id}`}>{item.fields.title}</a>
+                                                    }
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                }
                             </GridCol>
                         </Grid>
                     </div>
