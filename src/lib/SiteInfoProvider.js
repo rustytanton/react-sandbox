@@ -14,11 +14,13 @@ class SiteInfoProvider extends React.Component {
     }
 
     componentDidMount () {
+        /*
         const self = this
         this.routeListener = window.addEventListener('popstate', () => {
             self.setRoute();
         })
         self.setRoute();
+        */
         this.doQuery()
     }
 
@@ -107,7 +109,7 @@ class SiteInfoProvider extends React.Component {
                     theme: this.state.theme,
                     themes: this.state.themes,
                     themeSet: newThemeTitle => {
-                        this.setState({
+                        self.setState({
                             theme: self.themeByTitle(newThemeTitle)
                         })
                     }

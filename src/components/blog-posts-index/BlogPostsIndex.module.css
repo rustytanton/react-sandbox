@@ -1,0 +1,21 @@
+.container {
+    display: block;
+}
+
+.post {
+    border-bottom: var(--borderBase) rgba(0, 0, 0, .2) solid;
+    margin-bottom: calc(var(--marginBase) * 2);
+}
+
+.postTitle {
+    margin-bottom: calc(var(--marginBase) / 2);
+}
+
+.updatedAt {
+    font-size: 80%;
+    margin-bottom: calc(var(--marginBase) / 2);
+}
+
+.postPreview {
+    padding: var(--paddingBase) 0;
+}

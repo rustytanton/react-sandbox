@@ -6,18 +6,6 @@ import GridCol from '../grid/GridCol';
 
 class PageHeader extends React.Component {
     render () {
-        let navLink = function (route, currentRoute, title) {
-            if (currentRoute && route !== currentRoute) {
-                return (
-                    <a href={route}>{title}</a>
-                )
-            } else {
-                return (
-                    <span>{title}</span>
-                )
-            }
-        }
-
         return (
             <SiteInfoContext.Consumer>
                 {context => (
@@ -30,6 +18,7 @@ class PageHeader extends React.Component {
                                 </div>
                             </GridCol>
                             <GridCol>
+                                {/* @todo this should be a separate component */}
                                 <div className={styles.themePicker}>
                                     <p>Current theme: <span className={styles.themeName}>{context.theme.title}</span></p>
                                     <p>Set theme to:</p>
@@ -44,9 +33,9 @@ class PageHeader extends React.Component {
                             </GridCol>
                             <GridCol width='100%'>
                                 <ul className={styles.navList}>
-                                    <li className={styles.navItem}>
-                                        {navLink('/', context.route, 'Home')}
-                                    </li>
+                                    {this.props.navLinks.map((navLink, index) => {
+                                        return (<li key={index.toString()} className={styles.navItem}>{navLink}</li>)
+                                    })}
                                 </ul>
                             </GridCol>
                         </Grid>

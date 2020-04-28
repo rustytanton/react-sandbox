@@ -1,7 +1,5 @@
 import React from 'react'
-import Intro from '../components/intro/Intro';
-import PageContainer from '../components/page-container/PageContainer'
-import PageHeader from '../components/page-header/PageHeader'
+import BlogPostsIndex from '../components/blog-posts-index/BlogPostsIndex'
 import PageMain from '../components/page-main/PageMain'
 import ContentfulClient from '../lib/ContentfulClient'
 
@@ -9,6 +7,7 @@ class Home extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
+            pageNumber: 0,
             fields: {
                 title: ''
             }
@@ -33,12 +32,9 @@ class Home extends React.Component {
 
     render () {
         return (
-            <PageContainer title={this.state.fields.title}>
-                <PageHeader />
-                <PageMain>
-                    <Intro />
-                </PageMain>
-            </PageContainer>
+            <PageMain>
+                <BlogPostsIndex pageNumber={this.state.pageNumber} />
+            </PageMain>
         )
     }
 }
